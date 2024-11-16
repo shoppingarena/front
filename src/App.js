@@ -13,7 +13,7 @@ function App() {
     setError(null);
 
     try {
-      const response = await axios.get(`http://localhost:3000/check-domain`, {
+      const response = await axios.get(`http://localhost:3001/check-domain`, {
         params: { domain },
       });
       setResult(response.data); // Store the API response
