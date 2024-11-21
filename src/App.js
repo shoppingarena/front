@@ -14,7 +14,7 @@ function App() {
     setResult(null);
 
     try {
-      const response = await axios.get(`http://localhost:3001/check-domain`, {
+      const response = await axios.get(`https://check.shoppingarena.net:3001/check-domain`, {
         params: { domain },
       });
       setResult(response.data); // Store the API response
