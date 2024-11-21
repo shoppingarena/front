@@ -1,3 +1,9 @@
+# Testing Node.js with Express.js to get APi data from external server
+
+This code was builded during conversation with chatgpt. Check the link below:
+
+https://chatgpt.com/share/673eef79-7800-8009-ac39-b054a28401aa
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

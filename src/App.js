@@ -11,6 +11,7 @@ function App() {
     e.preventDefault(); // Prevent form from refreshing the page
     setLoading(true);
     setError(null);
+    setResult(null);
 
     try {
       const response = await axios.get(`http://localhost:3001/check-domain`, {
@@ -24,8 +25,31 @@ function App() {
     }
   };
 
+  const renderResult = () => {
+    if (!result) return null;
+
+    const lines = result.split('\n').filter((line) => line.trim() !== ''); // Parse lines
+    const data = lines.reduce((acc, line) => {
+      const [key, value] = line.split(' = ');
+      if (key && value) acc[key.trim()] = value.trim();
+      return acc;
+    }, {});
+
+    return (
+      <div className="result-card">
+        <h2>Search Results</h2>
+        {Object.entries(data).map(([key, value]) => (
+          <div key={key} className="result-line">
+            <span className="key">{key}:</span>
+            <span className="value">{value}</span>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+    <div className="container">
       <h1>Domain Search</h1>
       <form onSubmit={handleSearch}>
         <input
@@ -33,23 +57,20 @@ function App() {
           value={domain}
           onChange={(e) => setDomain(e.target.value)}
           placeholder="Enter domain (e.g., example.com)"
-          style={{ padding: '10px', width: '300px', marginRight: '10px' }}
+          className="input"
         />
-        <button type="submit" style={{ padding: '10px' }}>
+        <button type="submit" className="button">
           Search
         </button>
       </form>
 
-      {loading && <p>Loading...</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {result && (
-        <div style={{ marginTop: '20px' }}>
-          <h2>Search Results:</h2>
-          <pre>{JSON.stringify(result, null, 2)}</pre>
-        </div>
-      )}
+      {loading && <p className="loading">Loading...</p>}
+      {error && <p className="error">{error}</p>}
+      {renderResult()}
     </div>
   );
 }
+
+
 
 export default App;
