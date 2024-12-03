@@ -3,6 +3,7 @@
   "version": "0.1.1",
   "homepage": "https://check.shoppingarena.net/",
   "private": true,
+  "proxy": "https://check.shoppingarena.net",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",

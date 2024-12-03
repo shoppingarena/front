@@ -21,7 +21,7 @@ function App() {
       });
       setResult(response.data); // Store the API response
     } catch (err) {
-      setError('Failed to fetch domain data. Please try again.');
+      setError('Message from App.js: "Failed to fetch domain data. Please try again."');
     } finally {
       setLoading(false);
     }
