@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="container">
-      <Header />
+      <h1>Domain Search</h1>
       <SearchForm onSearch={handleSearch} setDomain={setDomain} domain={domain} />
       <SearchResults result={result} loading={loading} error={error} />
     </div>
