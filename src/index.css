@@ -48,3 +48,16 @@ code {
     transform: scale(1);
   }
 }
+.form-container {
+  display: flex;
+  flex-direction: column;
+   
+}                                                 
+  
+.input-container {
+  display: flex;
+}
+
+.error-message {
+  display: block;
+}

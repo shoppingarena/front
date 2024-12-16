@@ -31,19 +31,26 @@ function SearchForm({ onSearch, setDomain, domain }) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input
-                type="text"
-                value={domain}
-                onChange={handleChange}
-                placeholder="Enter domain (e.g., example.com)"
-                className="input"
-            />
-            <button type="submit" className="button">
-                Search
-            </button>
-            {!isValid && <p style={{ color: 'red' }}>Invalid Domain name</p>}
+            <div className='form-container'>
+                <div className="input-container">
+                    <input
+                        type="text"
+                        value={domain}
+                        onChange={handleChange}
+                        placeholder="Enter domain (e.g., example.com)"
+                        className="input"
+                    />
+                    <button type="submit" className="button">
+                        Search
+                    </button>
+                </div>
+                <div className='error-message'>
+                    {!isValid && <p style={{ color: 'red' }}>Invalid Domain name</p>}
+                </div>
+            </div>
 
         </form>
+
     );
 }
 

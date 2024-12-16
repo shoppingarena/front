@@ -3,6 +3,7 @@ import Header from './Header';
 import SearchForm from './SearchForm';
 import SearchResults from './SearchResults';
 import axios from 'axios';
+import './app.css';
 
 function App() {
   const [domain, setDomain] = useState('');
