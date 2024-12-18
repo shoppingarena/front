@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 
+
 function SearchForm({ onSearch, setDomain, domain }) {
 
     const [isValid, setIsValid] = useState(true);
@@ -19,6 +20,9 @@ function SearchForm({ onSearch, setDomain, domain }) {
         console.log("handleChange", value);
 
     };
+
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (isValid) {
@@ -33,13 +37,16 @@ function SearchForm({ onSearch, setDomain, domain }) {
         <form onSubmit={handleSubmit}>
             <div className='form-container'>
                 <div className="input-container">
+
                     <input
-                        type="text"
+                        type="search"
                         value={domain}
                         onChange={handleChange}
                         placeholder="Enter domain (e.g., example.com)"
                         className="input"
                     />
+
+
                     <button type="submit" className="button">
                         Search
                     </button>

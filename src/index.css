@@ -61,3 +61,12 @@ code {
 .error-message {
   display: block;
 }
+.input-wrapper {
+    position: relative;
+}
+.delete-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color:red;
+}

@@ -6,7 +6,7 @@ body {
   color: #333;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: first baseline;
   height: 100vh;
 }
 
